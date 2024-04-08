@@ -7,7 +7,7 @@ The goal of the project is to use machine learning techniques to help users plot
 
 ## Group Members
 Kit \
-Faris \ 
+Faris \
 Serene \
 Wee Lye
 
