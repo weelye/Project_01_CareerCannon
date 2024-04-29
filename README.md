@@ -11,6 +11,6 @@ pandas
 scikitlearn
 
 ## How to run
-0. Run "cd Project01 && pip install -r requirements.txt"
+0. Install dependencies
 1. Run through all the jupyter notebooks to generate the models in ML-Logic
 2. Run "streamlit run app.py --client.showSidebarNavigation=false"
