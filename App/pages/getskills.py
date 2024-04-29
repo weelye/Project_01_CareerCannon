@@ -62,7 +62,7 @@ with cent_co:
       st.markdown("##### Based on your skills, you are: ")
 
       if(prob_is_1 > 55):
-        st.markdown("**Congratulations! You are a software engineer. (" + str(prob_is_1) + "%)** :sunglasses:")
+        st.markdown("**Congratulations! Your skills show that you can be a software engineer. (" + str(prob_is_1) + "%)** :sunglasses:")
       else:
         st.markdown("**Sorry, you are not a software engineer. (" + str(prob_is_1) + "%)**")
 
