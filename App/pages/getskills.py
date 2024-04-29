@@ -79,9 +79,9 @@ with cent_co:
       st.markdown('----------------')
       st.markdown("**Other jobs that we recommend based on your skillset:**")
       data = wf.getTop5Jobs(new_job_skills)
-      data['Confidence Score'] = data['Confidence Score'].astype(float).round(2)
-      data['Confidence Score'] = data['Confidence Score'] * 100.0
+      data['Score'] = data['Score'].astype(float).round(2)
+      data['Score'] = data['Score'] * 100.0
 
 #      st.dataframe(data,hide_index=True)
       for index, row in data.iterrows():
-        st.markdown(str(row['Job'])+" ("+str(row['Confidence Score'])+"% match)")
+        st.markdown(str(row['Job'])+" ("+str(row['Score'])+"% match)")
