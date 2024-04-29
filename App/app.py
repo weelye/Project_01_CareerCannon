@@ -2,8 +2,8 @@
 import streamlit as st
 st.set_page_config(page_title="Welcome")
 
-import os
-os.chdir("./App")
+#import os
+#os.chdir("./App")
 
 left_co,cent_co,last_co = st.columns(3)
 with cent_co:
