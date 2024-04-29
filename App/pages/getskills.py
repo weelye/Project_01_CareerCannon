@@ -53,9 +53,14 @@ with cent_co:
 
     st.markdown('----------------')
 
+
+    #def getMostWantedSkills(jobname):
+    #def predict(new_job_skills,jobname):
+
+
     if skills and option == "Software Engineer":
       st.subheader("Results")
-      prediction_data = dt.predict(new_job_skills_2)
+      prediction_data = dt.predict(new_job_skills_2,option.lower())
 #      st.dataframe(prediction_data,hide_index=True)
       prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
       prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
@@ -66,6 +71,7 @@ with cent_co:
       else:
         st.markdown("**Sorry, you are not a software engineer. (" + str(prob_is_1) + "%)**")
 
+
 #    if skills and option == "Nurse":
 #      st.subheader("Results")
 #      st.write("Nurse selected")
@@ -74,6 +80,14 @@ with cent_co:
 #      st.subheader("Results")
 #      st.write("Chef selected")
 
+    mw = dt.getMostWantedSkills(option.lower())
+    user_skill_lack = list(set(mw) - set(new_job_skills_2))
+
+    if(len(user_skill_lack) > 0):
+      st.markdown('----------------')
+      st.markdown("**Top 5 relevant skills**")
+      for skillname in user_skill_lack:
+        st.markdown(skillname)
 
     if skills and option:
       st.markdown('----------------')
