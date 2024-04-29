@@ -1,0 +1,465 @@
+,search_position
+0,abstractor
+1,account executive
+2,accountant
+3,accountant cost
+4,accountant systems
+5,accountant tax
+6,accounting clerk
+7,acrobat
+8,acupuncturist
+9,administrative assistant
+10,administrative clerk
+11,aeronautical design engineer
+12,agricultural research engineer
+13,air analyst
+14,air conditioning mechanic
+15,airframe and power plant mechanic
+16,airport engineer
+17,anesthesiologist
+18,appointment clerk
+19,arbitrator
+20,architect
+21,art director
+22,art therapist
+23,assembler
+24,assembler product
+25,assembler unit
+26,assembly technician
+27,assistant construction superintendent
+28,assistant principal
+29,athletic trainer
+30,auditor
+31,auditor internal
+32,automatic equipment technician
+33,automobile detailer
+34,automobile mechanic
+35,auxiliary equipment operator
+36,baker
+37,baker apprentice
+38,baker helper
+39,balance assembler
+40,bar attendant
+41,barber
+42,bartender
+43,beach lifeguard
+44,billing clerk
+45,biochemistry technologist
+46,biologist
+47,bookkeeper
+48,bookmobile driver
+49,bouncer
+50,bridge inspector
+51,budget analyst
+52,budget officer
+53,building consultant
+54,bus inspector
+55,butcher apprentice
+56,buyer
+57,buyer assistant
+58,cable television installer
+59,car hop
+60,car inspector
+61,card player
+62,cardiac monitor technician
+63,cardiologist
+64,career guidance technician
+65,cargo checker
+66,cashier
+67,cement mason
+68,central office equipment engineer
+69,certification and selection specialist
+70,change person
+71,chart clerk
+72,charter
+73,chauffeur
+74,check cashier
+75,chef
+76,chemical engineer
+77,chemist
+78,chief computer programmer
+79,chief engineer
+80,christian science nurse
+81,circulation sales representative
+82,civil engineer
+83,civil engineering technician
+84,claim examiner
+85,claims clerk
+86,cleaner
+87,clergy member
+88,clerk general
+89,clinical psychologist
+90,clinical therapist
+91,coach driver
+92,color maker
+93,commercial engineer
+94,communication center operator
+95,communications consultant
+96,computer operator
+97,computer programmer
+98,computer security specialist
+99,computer systems hardware analyst
+100,conductor
+101,consultant education
+102,contact clerk
+103,container coordinator
+104,contract administrator
+105,contract specialist
+106,control operator
+107,controller
+108,controls designer
+109,cook
+110,cook apprentice
+111,coordinator rehabilitation services
+112,cost and sales record supervisor
+113,counselor
+114,counselor marriage and family
+115,counter hand
+116,counter supervisor
+117,court clerk
+118,creative director
+119,credit authorizer
+120,credit card clerk
+121,credit counselor
+122,critic
+123,customer equipment engineer
+124,customer facilities supervisor
+125,customer service representative
+126,customer services coordinator
+127,cutter
+128,dancer
+129,data base administrator
+130,data communications analyst
+131,data entry clerk
+132,dental assistant
+133,dentist
+134,dermatologist
+135,designer
+136,developer
+137,development mechanic
+138,dialysis technician
+139,dining room attendant
+140,director athletic
+141,director education
+142,director educational program
+143,director nursing service
+144,director religious activities
+145,director research
+146,director school nursing
+147,director social
+148,director stage
+149,director technical
+150,director translation
+151,dispatcher
+152,distribution field engineer
+153,dock hand
+154,documentation engineer
+155,documentation supervisor
+156,double
+157,driver
+158,driver supervisor
+159,drummer
+160,dye house supervisor
+161,economist
+162,editorial assistant
+163,educational resource coordinator
+164,educational specialist
+165,electrical design engineer
+166,electrical engineer
+167,electrical inspector
+168,electrical installation supervisor
+169,electrical research engineer
+170,electrical supervisor
+171,electrical technician
+172,electrical test engineer
+173,electrician
+174,electrician supervisor
+175,electromechanical technician
+176,electronics test engineer
+177,electronics worker
+178,emergency medical services coordinator
+179,emergency medical technician
+180,employee relations specialist
+181,endodontist
+182,engineer system development
+183,environmental analyst
+184,equal opportunity representative
+185,equipment cleaner
+186,extra
+187,facilities planner
+188,faculty member college university
+189,family practitioner
+190,field contractor
+191,field engineer specialist
+192,field representative
+193,field service technician
+194,financial planner
+195,finishing inspector
+196,fitter
+197,food service driver
+198,food service supervisor
+199,fountain server
+200,garde manger
+201,genealogist
+202,general practitioner
+203,geologist
+204,goodwill ambassador
+205,graduate assistant
+206,grant coordinator
+207,group sales representative
+208,guard security
+209,guide
+210,guide travel
+211,gynecologist
+212,hair stylist
+213,handler
+214,head coach
+215,headwaiter headwaitress
+216,hearing officer
+217,historic site administrator
+218,home attendant
+219,host hostess
+220,housekeeper
+221,human resource advisor
+222,immigration inspector
+223,industrial engineer
+224,information scientist
+225,inspector
+226,installer
+227,instructor
+228,instructor business education
+229,instructor extension work
+230,instructor physical
+231,insurance attorney
+232,interior designer
+233,internist
+234,interpreter
+235,investigator
+236,investment analyst
+237,job analyst
+238,job development specialist
+239,judge
+240,kitchen supervisor
+241,laboratory technician
+242,lawyer
+243,layer
+244,lead former
+245,leader tier
+246,liaison engineer
+247,logistics engineer
+248,magazine supervisor
+249,maintenance data analyst
+250,maintenance mechanic
+251,maintenance supervisor
+252,management analyst
+253,manager advertising
+254,manager benefits
+255,manager compensation
+256,manager contracts
+257,manager customer service
+258,manager department
+259,manager display
+260,manager education and training
+261,manager employee welfare
+262,manager employment
+263,manager forms analysis
+264,manager internal security
+265,manager personnel
+266,manager pool
+267,manager procurement services
+268,manager promotion
+269,manager quality control
+270,manager records analysis
+271,manager reports analysis
+272,manager stage
+273,manufacturing engineer
+274,materials engineer
+275,mathematician
+276,meat clerk
+277,medical assistant
+278,medical laboratory technician
+279,medical physicist
+280,medical secretary
+281,medical technologist
+282,merchandise distributor
+283,meter reader
+284,microbiologist
+285,model
+286,modeler
+287,mortgage clerk
+288,music copyist
+289,nematologist
+290,neurologist
+291,nuclear medicine technologist
+292,nurse anesthetist
+293,nurse assistant
+294,nurse consultant
+295,nurse head
+296,nurse infection control
+297,nurse licensed practical
+298,nurse midwife
+299,nurse office
+300,nurse practical
+301,nurse practitioner
+302,nurse private duty
+303,nurse school
+304,nurse staff community health
+305,nurse supervisor
+306,nurse supervisor evening night
+307,occupational therapy assistant
+308,ophthalmologist
+309,orderly
+310,orthopedic assistant
+311,page
+312,paralegal
+313,paramedic
+314,pathologist
+315,pediatrician
+316,perfusionist
+317,personal shopper
+318,pharmacist
+319,phlebotomist
+320,physical therapist
+321,physical therapist assistant
+322,physician assistant
+323,physician occupational
+324,pipe fitter
+325,plant pathologist
+326,plumber
+327,plumber supervisor
+328,podiatrist
+329,police surgeon
+330,polysomnographic technician
+331,post office clerk
+332,power transmission engineer
+333,preparation supervisor
+334,pressure supervisor
+335,principal
+336,printer
+337,procurement engineer
+338,producer
+339,production assistant
+340,production helper
+341,production supervisor
+342,program assistant
+343,program coordinator
+344,programmer analyst
+345,property coordinator
+346,protective officer
+347,psychiatric aide
+348,psychiatric technician
+349,psychiatrist
+350,psychologist counseling
+351,psychologist educational
+352,psychologist school
+353,psychologist social
+354,quality assurance analyst
+355,radiation therapy technologist
+356,radiologic technologist
+357,radiologist
+358,range manager
+359,rate supervisor
+360,reader
+361,real estate clerk
+362,recreational therapist
+363,recruiter
+364,registered representative
+365,registration clerk
+366,rehabilitation clerk
+367,reliability engineer
+368,research associate
+369,research subject
+370,retirement officer
+371,river
+372,router
+373,safety engineer
+374,safety manager
+375,sales agent business services
+376,sales agent insurance
+377,sales attendant
+378,sales promotion representative
+379,sales representative
+380,sales representative containers
+381,sales representative food products
+382,sales representative general merchandise
+383,sales service promoter
+384,scanner
+385,scheduler
+386,screen operator
+387,second
+388,secretary
+389,service representative
+390,service supervisor
+391,set key driver
+392,shop supervisor
+393,software engineer
+394,solutions operator
+395,sous chef
+396,special effects specialist
+397,stand
+398,standards engineer
+399,starter
+400,stock control supervisor
+401,stock supervisor
+402,storekeeper
+403,structural engineer
+404,substance abuse counselor
+405,superintendent local
+406,superintendent sales
+407,superintendent service
+408,supervisor
+409,supervisor area
+410,supervisor channel process
+411,supervisor chemical
+412,supervisor cleaning
+413,supervisor customer services
+414,supervisor delivery department
+415,supervisor drawing
+416,supervisor education
+417,supervisor files
+418,supervisor inspection
+419,supervisor landscape
+420,supervisor line
+421,supervisor maintenance
+422,supervisor operations
+423,supervisor preparation department
+424,supervisor properties
+425,supervisor shop
+426,supervisor telephone information
+427,surgeon
+428,surgical technician
+429,survival specialist
+430,systems analyst
+431,take operator
+432,tax attorney
+433,tax clerk
+434,tax preparer
+435,teacher
+436,technical coordinator
+437,technical operator
+438,technical support specialist
+439,teller
+440,test fixture designer
+441,ticket broker
+442,tier
+443,title supervisor
+444,tool planner
+445,training representative
+446,training technician
+447,transplant coordinator
+448,transportation engineer
+449,travel agent
+450,tumor registrar
+451,tutor
+452,ultrasound technologist
+453,underwriting clerk
+454,urologist
+455,utility worker
+456,utilization review coordinator
+457,value engineer
+458,vendor
+459,ventilator
+460,veterinarian
+461,veterinary technician
+462,waiter waitress
+463,zoo veterinarian
