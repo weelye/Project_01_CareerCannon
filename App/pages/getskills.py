@@ -33,15 +33,14 @@ def process_skills2(skills):
     return skills_token
 
 
-st.set_page_config(page_title="Waiting for your input")
+st.set_page_config(page_title="Waiting for input")
 
 left_co,cent_co,last_co = st.columns(3)
 with cent_co:
 
     st.subheader("Step 1")
     st.markdown("Select your dream job")
- #   option = st.selectbox('Choose', ["Software Engineer","Nurse","Chef"])
-    option = st.selectbox('Choose', ["Software Engineer"])
+    option = st.selectbox('Choose', ["Software Engineer","Database Administrator","Maintenance Data Analyst"])
 
     st.subheader("Step 2")
     st.markdown("Enter your skills relevant to the job, separated by a comma (,)")
@@ -58,44 +57,60 @@ with cent_co:
     #def predict(new_job_skills,jobname):
 
 
-    if skills and option == "Software Engineer":
-      st.subheader("Results")
-      prediction_data = dt.predict(new_job_skills_2,option.lower())
-#      st.dataframe(prediction_data,hide_index=True)
-      prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
-      prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
-      st.markdown("##### Based on your skills, you are: ")
-
-      if(prob_is_1 > 55):
-        st.markdown("**Congratulations! Your skills show that you can be a software engineer. (" + str(prob_is_1) + "%)** :sunglasses:")
-      else:
-        st.markdown("**Sorry, you are not a software engineer. (" + str(prob_is_1) + "%)**")
-
-
-#    if skills and option == "Nurse":
-#      st.subheader("Results")
-#      st.write("Nurse selected")
-
-#    if skills and option == "Chef":
-#      st.subheader("Results")
-#      st.write("Chef selected")
-
-    mw = dt.getMostWantedSkills(option.lower())
-    user_skill_lack = list(set(mw) - set(new_job_skills_2))
-
-    if(len(user_skill_lack) > 0):
-      st.markdown('----------------')
-      st.markdown("**Top 5 relevant skills**")
-      for skillname in user_skill_lack:
-        st.markdown(skillname)
-
     if skills and option:
+      prob_is_1 = None
+      prob_is_not_1 = None
+
+      st.subheader("Results")
+      if skills and option == "Software Engineer":
+        prediction_data = dt.predict(new_job_skills_2,option.lower())
+#        st.dataframe(prediction_data,hide_index=True)
+        prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
+        prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
+
+      elif skills and option == "Database Administrator":
+        prediction_data = dt.predict(new_job_skills_2,option.lower())
+#        st.dataframe(prediction_data,hide_index=True)
+        prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
+        prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
+
+      elif skills and option == "Maintenance Data Analyst":
+        prediction_data = dt.predict(new_job_skills_2,option.lower())
+#        st.dataframe(prediction_data,hide_index=True)
+        prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
+        prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
+
+
+      st.markdown("##### Based on your skills, you are: ")
+      if(prob_is_1 > 55):
+        st.markdown("**Congratulations! Your skills show that you can be a "+option+". (" + str(prob_is_1) + "%)** :sunglasses:")
+      else:
+        st.markdown("**Sorry, your skills are not sufficient to be a  "+option+". (" + str(prob_is_1) + "%)**")
+
+
+      mw = dt.getMostWantedSkills(option.lower())
+      user_skill_lack = list(set(mw) - set(new_job_skills_2))
+
+      if(len(user_skill_lack) > 0):
+        st.markdown('----------------')
+        st.markdown("**Top sought after skills**")
+        for skillname in user_skill_lack:
+          st.markdown(skillname.replace("_", " ").capitalize())
+
       st.markdown('----------------')
       st.markdown("**Other jobs that we recommend based on your skillset:**")
       data = wf.getTop5Jobs(new_job_skills)
       data['Score'] = data['Score'].astype(float).round(2)
       data['Score'] = data['Score'] * 100.0
+      data_filtered = data[data.apply(lambda x: x['Job'] != option.lower(), axis=1)]
+      data_filtered = data_filtered[data_filtered.apply(lambda x: x['Score'] > 70, axis=1)]
 
 #      st.dataframe(data,hide_index=True)
-      for index, row in data.iterrows():
-        st.markdown(str(row['Job'])+" ("+str(row['Score'])+"% match)")
+      for index, row in data_filtered.iterrows():
+        st.markdown(str(row['Job']).capitalize()+" ("+str(row['Score'])+"% match)")
+
+      if data_filtered.empty:
+        st.markdown('No similar jobs is found :sob:')
+
+
+
