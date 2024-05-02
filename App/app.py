@@ -8,7 +8,7 @@ st.set_page_config(page_title="Welcome")
 left_co,cent_co,last_co = st.columns(3)
 with cent_co:
     st.title("CareerCannon")
-    st.image('img/star.webp',caption="Boost your career to the stratosphere.")
+    st.image('img/star.webp',caption="We launch you towards the right career.")
     st.markdown('This project aims to help users locate jobs using NLP and ML techniques.')
     st.markdown('To start, enter your name:')
     Name = st.text_input('Name')
