@@ -1,44 +1,53 @@
 import pandas as pd
 import numpy as np
+import glob, os
 from pathlib import Path
 from joblib import load
 
-script_dir = Path(__file__).resolve().parent
-
-# Load 1 model per job!?
-filename = str(script_dir)+'/software_engineer_clf.joblib'
-clf_se_load = load(filename)
-#
+script_dir = str(Path(__file__).resolve().parent)
+clf_dict = dict()
 
 X_train = pd.read_csv(str(script_dir)+'/columns_1.csv')
+X_train_2 = pd.read_csv(str(script_dir)+'/columns_2.csv')
+
+def preload_models():
+  for file in glob.glob("*.joblib"):
+    clf_name = Path(file).stem
+    clf_dict[clf_name] = load(script_dir + '/' + file)
+
+def getSanitizedJobName(jobname):
+  return jobname.lower().replace(" ", "_") + "_clf"
+
+def getSkillsColumns(jobname):
+  if jobname.lower() == "software engineer":
+    return X_train.columns
+  return X_train_2.columns
 
 def predict(new_job_skills,jobname):
-  df_prediction_input = pd.DataFrame(0, index=np.arange(1),columns=X_train.columns)
-  predicted = pd.DataFrame()
+  cols = getSkillsColumns(jobname)
+  df_prediction_input = pd.DataFrame(0, index=np.arange(1),columns=cols)
 
+  predicted = pd.DataFrame()
   for skill in new_job_skills:
     if skill in df_prediction_input.columns:
       df_prediction_input.loc[:, skill] = 1
 
-  if jobname.lower() == "software engineer":
-    predicted = clf_se_load.predict_proba(df_prediction_input)
+    predicted = clf_dict[getSanitizedJobName(jobname)].predict_proba(df_prediction_input)
 
-  return pd.DataFrame(predicted, columns=['not_software_engineer', 'is_software_engineer'])
+  return pd.DataFrame(predicted, columns=['not', 'is'])
 
 def getMostWantedSkills(jobname):
 
-  most_features_frame = pd.DataFrame()
-  if jobname.lower() == "software engineer":
-    most_features_frame = pd.DataFrame(
-      data=clf_se_load.feature_importances_,
+  most_features_frame = pd.DataFrame(
+      data=clf_dict[getSanitizedJobName(jobname)].feature_importances_,
       columns=["importance"],
-      index=X_train.columns,
+      index=getSkillsColumns(jobname),
       ).sort_values(by=["importance"], ascending=False)
-
   top_5_feature = most_features_frame.index[:6]
   top_5_feature_list = [i for i in top_5_feature]
 
   return top_5_feature_list
 
 
-#print(predict(['program', 'develop', 'software', 'java', 'c++', 'node.js', 'murder']))
+#preload_models()
+#print(predict(['program', 'develop', 'software', 'java', 'c++', 'node.js', 'murder'],"software engineer"))
