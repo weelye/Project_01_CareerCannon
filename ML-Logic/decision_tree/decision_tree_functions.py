@@ -10,10 +10,9 @@ clf_dict = dict()
 X_train = pd.read_csv(str(script_dir)+'/columns_1.csv')
 X_train_2 = pd.read_csv(str(script_dir)+'/columns_2.csv')
 
-def preload_models():
-  for file in glob.glob("*.joblib"):
-    clf_name = Path(file).stem
-    clf_dict[clf_name] = load(script_dir + '/' + file)
+for file in glob.glob(script_dir+"/*.joblib"):
+  clf_name = Path(file).stem
+  clf_dict[clf_name] = load(file)
 
 def getSanitizedJobName(jobname):
   return jobname.lower().replace(" ", "_") + "_clf"
@@ -32,12 +31,11 @@ def predict(new_job_skills,jobname):
     if skill in df_prediction_input.columns:
       df_prediction_input.loc[:, skill] = 1
 
-    predicted = clf_dict[getSanitizedJobName(jobname)].predict_proba(df_prediction_input)
+  predicted = clf_dict[getSanitizedJobName(jobname)].predict_proba(df_prediction_input)
 
-  return pd.DataFrame(predicted, columns=['not', 'is'])
+  return pd.DataFrame(predicted, columns=['no', 'yes'])
 
 def getMostWantedSkills(jobname):
-
   most_features_frame = pd.DataFrame(
       data=clf_dict[getSanitizedJobName(jobname)].feature_importances_,
       columns=["importance"],
@@ -49,5 +47,4 @@ def getMostWantedSkills(jobname):
   return top_5_feature_list
 
 
-#preload_models()
 #print(predict(['program', 'develop', 'software', 'java', 'c++', 'node.js', 'murder'],"software engineer"))

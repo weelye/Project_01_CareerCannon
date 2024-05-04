@@ -17,6 +17,7 @@ import decision_tree_functions as dt
 from sklearn.feature_extraction.text import CountVectorizer # For the tokenizer and stop words removal
 import re
 
+print(dt)
 
 def process_skills(skills):
     skills = re.sub('[^a-zA-Z, ]','',skills)
@@ -40,7 +41,7 @@ with cent_co:
 
     st.subheader("Step 1")
     st.markdown("Select your dream job")
-    option = st.selectbox('Choose', ["Software Engineer","Database Administrator","Maintenance Data Analyst"])
+    option = st.selectbox('Choose', ["Software Engineer","BookKeeper","Electrician","Pharmacist","Information Scientist","Dentist","Mathematician"])
 
     st.subheader("Step 2")
     st.markdown("Enter your skills relevant to the job, separated by a comma (,)")
@@ -62,24 +63,11 @@ with cent_co:
       prob_is_not_1 = None
 
       st.subheader("Results")
-      if skills and option == "Software Engineer":
+      if skills and option:
         prediction_data = dt.predict(new_job_skills_2,option.lower())
 #        st.dataframe(prediction_data,hide_index=True)
-        prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
-        prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
-
-      elif skills and option == "Database Administrator":
-        prediction_data = dt.predict(new_job_skills_2,option.lower())
-#        st.dataframe(prediction_data,hide_index=True)
-        prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
-        prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
-
-      elif skills and option == "Maintenance Data Analyst":
-        prediction_data = dt.predict(new_job_skills_2,option.lower())
-#        st.dataframe(prediction_data,hide_index=True)
-        prob_is_1 = np.floor(prediction_data.is_software_engineer[0] * 100)
-        prob_is_not_1 = np.floor(prediction_data.not_software_engineer[0] * 100)
-
+        prob_is_1 = np.floor(prediction_data.yes[0] * 100)
+        prob_is_not_1 = np.floor(prediction_data.no[0] * 100)
 
       st.markdown("##### Based on your skills, you are: ")
       if(prob_is_1 > 55):
