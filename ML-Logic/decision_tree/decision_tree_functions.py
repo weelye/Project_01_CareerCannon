@@ -24,6 +24,7 @@ def getSkillsColumns(jobname):
 
 def predict(new_job_skills,jobname):
   cols = getSkillsColumns(jobname)
+  print(cols)
   df_prediction_input = pd.DataFrame(0, index=np.arange(1),columns=cols)
 
   predicted = pd.DataFrame()
@@ -31,6 +32,7 @@ def predict(new_job_skills,jobname):
     if skill in df_prediction_input.columns:
       df_prediction_input.loc[:, skill] = 1
 
+  print(getSanitizedJobName(jobname))
   predicted = clf_dict[getSanitizedJobName(jobname)].predict_proba(df_prediction_input)
 
   return pd.DataFrame(predicted, columns=['no', 'yes'])
@@ -47,4 +49,4 @@ def getMostWantedSkills(jobname):
   return top_5_feature_list
 
 
-#print(predict(['program', 'develop', 'software', 'java', 'c++', 'node.js', 'murder'],"software engineer"))
+print(predict(['program', 'develop', 'software', 'java', 'c++', 'node.js', 'murder'],"information scientist"))
