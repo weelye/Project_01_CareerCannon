@@ -83,7 +83,9 @@ with cent_co:
         st.markdown('----------------')
         st.markdown("**Top sought after skills**")
         for skillname in user_skill_lack:
-          st.markdown(skillname.replace("_", " ").capitalize())
+          sk = skillname.replace("_", " ").replace(".,()", "")
+          skillname_filtered = re.sub(r'[0-9]', '',sk)
+          st.markdown(skillname_filtered.capitalize())
 
       st.markdown('----------------')
       st.markdown("**Other jobs that we recommend based on your skillset:**")
