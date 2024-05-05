@@ -8,14 +8,14 @@ The goal of the project is to use machine learning techniques to help users plot
 We recommend avoiding compiling the libraries yourself using pip and use Anaconda instead. 
 On Production servers we recommend using miniconda.
 
-python                    3.12.3  
-streamlit                 1.32.0
-numpy                     1.26.4
-pandas                    2.2.1
-joblib                    1.2.0
-gensim                    4.3.2 
-scikit-learn              1.3.0
-scipy                     1.12.0
+- python                    3.12.3  
+- streamlit                 1.32.0
+- numpy                     1.26.4
+- pandas                    2.2.1
+- joblib                    1.2.0
+- gensim                    4.3.2 
+- scikit-learn              1.3.0
+- scipy                     1.12.0
 
 ## How to run
 ### 1. Install dependencies. We recommend installing dependencies using conda rather than pip to avoid compiling everything from scratch.
